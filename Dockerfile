@@ -1,8 +1,6 @@
-FROM ruby
+FROM rails
 
-RUN apt-get update && apt-get install -y nodejs npm
-
-RUN mkdir /app
-WORKDIR /app
-ADD . /app
-RUN bundle install
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+ADD . /usr/src/app
+RUN bundle install --system
